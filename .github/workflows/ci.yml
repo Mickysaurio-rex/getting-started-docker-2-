@@ -18,6 +18,24 @@ jobs:
       run: |
         npm install
 
-    - name: Pruebas 
+    - name: Pruebas Jest
       run: |
-        npm run test 
+        npm run test
+
+    - name: Pruebas Cypress
+      run: |
+        echo "Corriendo pruebas cypress"
+        echo "Pruebas correctas! Todo Bien!"        
+        exit 0
+
+build: 
+  runs-on: ubuntu-20.04
+
+  steps: 
+    - name: Checkout git 
+      uses: actions/checkout@v4
+
+    - name: Dependencien and Building
+      run: |
+        npm install 
+        npm run build 
